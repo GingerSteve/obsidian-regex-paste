@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-regex-paste",
+	"name": "Regex Paste",
+	"version": "0.1.0",
+	"minAppVersion": "1.5.11",
+	"description": "Transform pasted text with regular expressions.",
+	"author": "Steve Marshall",
+	"authorUrl": "https://github.com/GingerSteve",
+	"fundingUrl": "https://ko-fi.com/thestevemarshall",
+	"isDesktopOnly": false
+}
