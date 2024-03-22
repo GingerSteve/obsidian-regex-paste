@@ -34,8 +34,20 @@ export default class RegexPastePlugin extends Plugin {
             new RegExp(rep.pattern, "g"),
             rep.replacement,
           );
-          editor.replaceRange(formatted, editor.getCursor());
-          editor.setCursor(editor.getCursor().ch + formatted.length);
+          editor.replaceRange(
+            formatted,
+            editor.getCursor("from"),
+            editor.getCursor("to"),
+          );
+
+          const cursor = editor.getCursor();
+          editor.setCursor({
+            line: cursor.line,
+            ch: Math.min(
+              cursor.ch + formatted.length,
+              editor.getLine(cursor.line).length,
+            ),
+          });
         }
       }),
     );
